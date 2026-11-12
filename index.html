@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#262536">
+  <title>PantherBuy spreadsheet | Maten, QC-foto’s en productcategorieën</title>
+  <meta name="description" content="Gebruik de PantherBuy spreadsheet als vertrekpunt. Blader door CAFANS-categorieën en vergelijk maten, productlinks, QC-foto’s en verzendkosten.">
+  <link rel="icon" href="https://www.cafans.com/favicon.ico">
+  <!-- Zoekonderzoek: tien unieke pagina’s uit beschikbare webresultaten. De exacte eerste Google-pagina was niet verifieerbaar. -->
+  <style>
+    :root{color-scheme:light;--ink:#262536;--paper:#f7f4ef;--accent:#e9fb91;--line:#cfc9d6;--muted:#545163}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.65 system-ui,sans-serif}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2,h3{line-height:1.12}
+    h1{font-size:clamp(2.65rem,7.5vw,6rem);letter-spacing:-.065em}
+    h2{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.045em;margin-bottom:1rem}
+    h3{font-size:1.3rem;margin-bottom:.55rem}
+    p+p{margin-top:.75rem}
+    a{color:inherit;text-underline-offset:.18em}
+    :focus-visible{outline:3px solid #8555bd;outline-offset:4px}
+    .wrap{width:min(74rem,calc(100% - 2rem));margin-inline:auto}
+    .mast{background:var(--ink);color:white;padding:.8rem 0}
+    .mast .wrap{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap}
+    .brand{font-weight:800;text-decoration:none}
+    .categories{padding:1.2rem 0}
+    .categories h2{font-size:1rem;letter-spacing:0}
+    .links{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.45rem}
+    .links a{display:flex;align-items:center;min-height:2.75rem;padding:.45rem .7rem;border:1px solid var(--line);border-radius:.4rem;text-decoration:none;font-size:.9rem;overflow-wrap:anywhere}
+    .links a:hover{background:var(--accent)}
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;background:#dcd3ed;border-radius:1rem;overflow:hidden}
+    .intro{align-self:center;padding:clamp(1.4rem,5vw,4.5rem)}
+    .intro p{max-width:43ch;margin:1rem 0}
+    .button{display:inline-block;background:var(--accent);color:var(--ink);border:1px solid var(--ink);border-radius:.35rem;padding:.6rem 1rem;text-decoration:none;font-weight:750}
+    .button:hover{background:white}
+    .hero figure{display:grid;align-content:center;background:#f0efeb}
+    img{display:block;width:100%;height:auto}
+    .hero img{aspect-ratio:4/3;object-fit:contain}
+    figcaption{padding:.55rem .8rem;font-size:.85rem;color:var(--muted)}
+    .section{margin:clamp(2.6rem,7vw,5.5rem) 0}
+    .gallery,.articles{display:grid;gap:1rem;grid-template-columns:repeat(4,minmax(0,1fr))}
+    .gallery figure,.articles article{border:1px solid var(--line);border-radius:.7rem;overflow:hidden;background:#fff}
+    .gallery img{aspect-ratio:1;object-fit:contain;background:#f2efed}
+    .articles{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .articles article{padding:clamp(1rem,3vw,1.8rem)}
+    .faq{max-width:53rem}
+    details{border-top:1px solid var(--line);padding:.85rem 0}
+    details:last-child{border-bottom:1px solid var(--line)}
+    summary{cursor:pointer;font-weight:700}
+    details p{padding-top:.6rem}
+    footer{background:var(--ink);color:white;padding:1.25rem 0}
+    @media(max-width:47rem){.links{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{grid-template-columns:1fr}.hero img{max-height:19rem}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:28rem){.links,.articles{grid-template-columns:repeat(2,minmax(0,1fr))}.articles{grid-template-columns:1fr}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "PantherBuy spreadsheet | Maten, QC-foto’s en productcategorieën",
+    "inLanguage": "nl",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wat is een PantherBuy spreadsheet?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Het is een productoverzicht dat doorgaans links naar aanbiedingen groepeert. Deze gids helpt je die informatie te beoordelen en verwijst voor het bladeren naar CAFANS."}
+      },
+      {
+        "@type": "Question",
+        "name": "Waar komen de categorieknoppen uit?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Elke categorieknop opent de overeenkomstige rubriek op CAFANS. De algemene knoppen openen de homepage van CAFANS."}
+      },
+      {
+        "@type": "Question",
+        "name": "Bewijzen QC-foto’s dat een merkartikel echt is?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Nee. QC-foto’s helpen bij het beoordelen van zichtbare kenmerken zoals kleur, naden en slijtage. Vraag bij een merkaankoop ook om informatie over de herkomst en controleer de verkoper."}
+      },
+      {
+        "@type": "Question",
+        "name": "Welke kosten vergelijk ik voor levering in Nederland of België?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Vergelijk het totaal voor jouw afleveradres. Neem de artikelprijs, eventuele servicekosten, verzending, belastingen en eventuele inklaringskosten mee."}
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/cnxyu/">
+</head>
+<body>
+  <header class="mast">
+    <div class="wrap">
+      <a class="brand" href="https://www.cafans.com">www.cafans.com</a>
+      <a href="https://www.cafans.com">Naar de catalogus</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="categories" aria-labelledby="categories-title">
+      <h2 id="categories-title">Blader op categorie bij CAFANS</h2>
+      <div class="links">
+        <a href="https://cafans.com/category-911-Shoes.html" lang="en">Shoes</a>
+        <a href="https://cafans.com/category-912-Hoodies%2FSweaters.html" lang="en">Hoodies/Sweaters</a>
+        <a href="https://cafans.com/category-913-T-Shirts.html" lang="en">T-Shirts</a>
+        <a href="https://cafans.com/category-914-Jackets.html" lang="en">Jackets</a>
+        <a href="https://cafans.com/category-915-Pants%2FShorts.html" lang="en">Pants/Shorts</a>
+        <a href="https://cafans.com/category-916-Headwear.html" lang="en">Headwear</a>
+        <a href="https://cafans.com/category-917-Sets.html" lang="en">Sets</a>
+        <a href="https://cafans.com/category-918-underwear%2Funderpants.html" lang="en">Underwear/underpants</a>
+        <a href="https://cafans.com/category-919-Jersey.html" lang="en">Jersey</a>
+        <a href="https://cafans.com/category-920-Accessories.html" lang="en">Accessories</a>
+      </div>
+    </nav>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div class="intro">
+        <h1 id="page-title">PantherBuy spreadsheet</h1>
+        <p>Een PantherBuy spreadsheet helpt je productlinks terug te vinden. Gebruik deze onafhankelijke koopgids om maten, foto’s en kosten te vergelijken. De categorieën brengen je naar de catalogus van CAFANS.</p>
+        <a class="button" href="https://www.cafans.com">Bekijk de CAFANS-catalogus</a>
+      </div>
+      <figure>
+        <img src="https://alssports.vteximg.com.br/arquivos/ids/3879892/10613661x1238466.jpg?v=639047797771100000" width="640" height="640" fetchpriority="high" alt="Witte lage Nike Air Force 1 met geperforeerde neus">
+        <figcaption>Nike Air Force 1 als beeldreferentie. De merkbeelden op deze pagina dienen ter illustratie.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section" aria-labelledby="visuals-title">
+      <h2 id="visuals-title">Waar let je op bij productfoto’s?</h2>
+      <div class="gallery">
+        <figure>
+          <img src="https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-surchemise-en-denim-brode-monogram--HVA07WY38650_PM2_Front%20view.png?hei=480&amp;wid=480" width="480" height="480" loading="lazy" decoding="async" alt="Louis Vuitton denim overshirt met geborduurd monogram">
+          <figcaption>Louis Vuitton — bekijk de kraag, manchetten en stiksels.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://media.gucci.com/style/HEXFBFBFB_South_0_160_640x640/1751298339/838745_3HBC4_2600_001_100_0000_Light.jpg" width="640" height="640" loading="lazy" decoding="async" alt="Beige Gucci baseballpet van GG-canvas">
+          <figcaption>Gucci — controleer de klep en verstelbare sluiting.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://www.pandolfini.it/uploads/imgup/7811it-Copertina.jpg" width="480" height="480" loading="lazy" decoding="async" alt="Rode Hermès Kelly-tas op een Louis Vuitton-koffer naast een sjaal">
+          <figcaption>Hermès — vraag bij een tas om detailfoto’s van de hoeken en sluiting.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://shop.r10s.jp/ec-kanteikyoku/cabinet/09384510/imgrc0089980559.jpg" width="480" height="480" loading="lazy" decoding="async" alt="Goudkleurige Dior Petit CD-halsketting">
+          <figcaption>Dior — vraag naar de kettinglengte en het materiaal.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="guides-title">
+      <h2 id="guides-title">Koopgidsen per onderwerp</h2>
+      <div class="articles">
+        <article>
+          <h3>PantherBuy productlinks controleren</h3>
+          <p>Open de oorspronkelijke productpagina en vergelijk de modelnaam, kleurvariant en maatopties met de rij in het overzicht. Sla de originele verkoperslink op. Bij een verlopen productlink zoek je op het artikelnummer en controleer je of de vervangende aanbieding dezelfde uitvoering toont.</p>
+        </article>
+        <article>
+          <h3>Sneaker- en kledingmaten vergelijken</h3>
+          <p>Meet je voetlengte in centimeters en raadpleeg de maattabel van het specifieke model voordat je een EU-schoenmaat kiest. Meet bij een hoodie de borstbreedte en mouwlengte van een kledingstuk dat goed zit. Vergelijk voor een jas ook de schouderbreedte en voor een broek de taille en binnenbeenlengte.</p>
+          <p>Bij een jersey kan een aansluitende spelerspasvorm anders vallen dan een supportersmodel. Controleer bij een set de maten van beide delen en let bij ondergoed op de stofsamenstelling en tailleband.</p>
+        </article>
+        <article>
+          <h3>PantherBuy QC-foto’s beoordelen</h3>
+          <p>Vraag bij sneakers om foto’s van beide zijkanten, de hiel, de buitenzool en het maatlabel. Controleer bij kleding de naden, ritssluiting en het waslabel. Vraag bij een afwijkende kleur om een foto bij neutraal licht. Vergelijk bij sieraden de afmetingen, sluiting en zichtbare slijtage met de productbeschrijving.</p>
+        </article>
+        <article>
+          <h3>PantherBuy verzendkosten vergelijken</h3>
+          <p>Noteer eerst de artikelprijs en eventuele servicekosten. Vraag bij internationale verzending om het verpakte gewicht en de doosafmetingen, omdat het volumegewicht kan meetellen. Controleer voor Nederland of België welke kosten in de bezorgofferte zitten en wie eventuele invoerkosten betaalt.</p>
+          <p>Vergelijk bij meerdere artikelen de prijs van één gebundeld pakket met aparte zendingen. Controleer vóór betaling de retourvoorwaarden, de retourtermijn en wie de retourzending betaalt.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Veelgestelde vragen</h2>
+      <details open>
+        <summary>Wat is een PantherBuy spreadsheet?</summary>
+        <p>Het is een productoverzicht dat doorgaans links naar aanbiedingen groepeert. Deze gids helpt je die informatie te beoordelen en verwijst voor het bladeren naar CAFANS.</p>
+      </details>
+      <details>
+        <summary>Waar komen de categorieknoppen uit?</summary>
+        <p>Elke categorieknop opent de overeenkomstige rubriek op CAFANS. De algemene knoppen openen de homepage van CAFANS.</p>
+      </details>
+      <details>
+        <summary>Bewijzen QC-foto’s dat een merkartikel echt is?</summary>
+        <p>Nee. QC-foto’s helpen bij het beoordelen van zichtbare kenmerken zoals kleur, naden en slijtage. Vraag bij een merkaankoop ook om informatie over de herkomst en controleer de verkoper.</p>
+      </details>
+      <details>
+        <summary>Welke kosten vergelijk ik voor levering in Nederland of België?</summary>
+        <p>Vergelijk het totaal voor jouw afleveradres. Neem de artikelprijs, eventuele servicekosten, verzending, belastingen en eventuele inklaringskosten mee.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Onafhankelijke koopgids · <a href="https://www.cafans.com">www.cafans.com</a></div>
+  </footer>
+</body>
+</html>
